@@ -1,4 +1,3 @@
-// config/CorsConfig.java
 package com.example.travelapi.config;
 
 import org.springframework.context.annotation.Bean;
@@ -10,12 +9,14 @@ public class CorsConfig {
   @Bean
   public WebMvcConfigurer corsConfigurer() {
     return new WebMvcConfigurer() {
-      @Override
-      public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-          .allowedOrigins("http://localhost:5173", "http://localhost:3000")
-          .allowedMethods("GET","POST","PUT","DELETE","OPTIONS");
+      @Override public void addCorsMappings(CorsRegistry r) {
+        r.addMapping("/**")
+         .allowedOrigins("http://localhost:5173")
+         .allowedMethods("GET","POST","PUT","PATCH","DELETE","OPTIONS")
+         .allowedHeaders("*")
+         .allowCredentials(true);
       }
     };
   }
 }
+

@@ -1,6 +1,4 @@
-package com.example.travelapi.model;
-
-import com.example.travelapi.entity.Airport;
+package com.example.travelapi.entity;
 
 import jakarta.persistence.*;
 

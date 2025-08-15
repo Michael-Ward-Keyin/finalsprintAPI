@@ -1,4 +1,3 @@
-// controller/AircraftController.java
 package com.example.travelapi.controller;
 
 import com.example.travelapi.dto.AircraftDto;
@@ -7,6 +6,9 @@ import com.example.travelapi.entity.Aircraft;
 import com.example.travelapi.entity.Passenger;
 import com.example.travelapi.repo.AircraftRepository;
 import com.example.travelapi.repo.PassengerRepository;
+
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -31,5 +33,10 @@ public class AircraftController {
     return passengers.stream()
       .map(p -> new PassengerDto(p.getId(), p.getName(), p.getAircraft().getId()))
       .toList();
+  }
+
+  @PostMapping
+  public Aircraft create(@Valid @RequestBody Aircraft incoming) {
+    return aircraftRepo.save(incoming);
   }
 }

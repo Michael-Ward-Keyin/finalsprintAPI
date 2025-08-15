@@ -1,4 +1,3 @@
-// entity/Aircraft.java
 package com.example.travelapi.entity;
 
 import jakarta.persistence.*;

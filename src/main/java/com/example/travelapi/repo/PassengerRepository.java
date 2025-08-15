@@ -1,4 +1,3 @@
-// repo/PassengerRepository.java
 package com.example.travelapi.repo;
 import com.example.travelapi.entity.Passenger;
 import org.springframework.data.jpa.repository.JpaRepository;

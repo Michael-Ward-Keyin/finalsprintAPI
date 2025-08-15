@@ -1,6 +1,5 @@
-// src/main/java/com/example/travelapi/controller/GateController.java
 package com.example.travelapi.controller;
-import com.example.travelapi.model.Gate;
+import com.example.travelapi.entity.Gate;
 import com.example.travelapi.repo.GateRepository;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;

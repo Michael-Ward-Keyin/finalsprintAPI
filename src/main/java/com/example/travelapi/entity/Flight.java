@@ -1,10 +1,8 @@
-package com.example.travelapi.model;
+package com.example.travelapi.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
-import com.example.travelapi.entity.Airport;
-import com.example.travelapi.entity.Aircraft;
 
 @Entity
 @Getter @Setter
@@ -32,12 +30,10 @@ public class Flight {
     @ManyToOne(optional = false)
     private Aircraft aircraft;
 
-    // Airport whose board this flight appears on (arrivals board=destination; departures board=origin)
     @ManyToOne(optional = false)
     @JoinColumn(name = "board_airport_id")
     private Airport boardAirport;
 
-    // The other side (arrivals: origin; departures: destination)
     @ManyToOne(optional = false)
     @JoinColumn(name = "other_airport_id")
     private Airport otherAirport;
